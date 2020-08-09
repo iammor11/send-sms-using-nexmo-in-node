@@ -1,10 +1,9 @@
 const Nexmo = require('nexmo');
-const socketio = require('socket.io');
 
 // Init Nexmo
 const nexmo = new Nexmo({
-  apiKey: '16c9f4d9',
-  apiSecret: 'hZvC5mRq2swVesj8'
+  apiKey: '******',
+  apiSecret: '*******'
 }, { debug: true });
 
 
@@ -14,7 +13,7 @@ exports.noVerify = (req, res, next) => {
   // console.log(req.body);
  
   nexmo.message.sendSms(
-    'immor11', '923200206211', 'hi from immor11',
+    'contactname', '**********mblno', 'hi from ...',
     (err, responseData) => {
       if(err) {
         console.log('error',err);
@@ -24,13 +23,3 @@ exports.noVerify = (req, res, next) => {
     }
   );
 };
-
-
-// Connect to socket.io
-// const io = socketio(server);
-// io.on('connection', (socket) => {
-//   console.log('Connected');
-//   io.on('disconnect', () => {
-//     console.log('Disconnected');
-//   })
-// });
